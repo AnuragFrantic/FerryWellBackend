@@ -30,16 +30,18 @@ app.get('/', (req, res) => {
 });
 
 
-// const options = {
-//     cert: fs.readFileSync('/etc/letsencrypt/live/advkumardeepraj.in/fullchain.pem', 'utf-8'),
-//     key: fs.readFileSync('/etc/letsencrypt/live/advkumardeepraj.in/privkey.pem', 'utf-8'),
-// };
+const options = {
+    cert: fs.readFileSync('/etc/letsencrypt/archive/ferrywellbrands.com/fullchain1.pem', 'utf-8'),
+    key: fs.readFileSync('/etc/letsencrypt/archive/ferrywellbrands.com/privkey1.pem', 'utf-8'),
+};
 
-// https.createServer(options, app)
-//     .listen(PORT, function (req, res) {
-//         // connect()
-//         console.log("Server started at port https " + PORT);
-//     });
+
+
+https.createServer(options, app)
+    .listen(PORT, function (req, res) {
+        // connect()
+        console.log("Server started at port https " + PORT);
+    });
 
 
 
@@ -49,6 +51,6 @@ app.get('/', (req, res) => {
 
 
 // Start Server
-app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`🚀 Server running on http://localhost:${PORT}`);
+// });
